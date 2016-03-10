@@ -1,0 +1,26 @@
+group 'com.github.thekingnothing'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testCompile 'org.testng:testng:6.9.8'
+    testCompile 'org.powermock:powermock-module-testng-agent:1.6.4'
+    testCompile 'org.powermock:powermock-api-easymock:1.6.4'
+    testCompile 'org.easymock:easymock:3.4'
+    testCompile 'org.powermock:powermock-module-javaagent:1.6.4'
+}
+
+test {
+    useTestNG() {
+        suites 'suite.xml'
+    }
+}
